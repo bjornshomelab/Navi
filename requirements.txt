@@ -30,6 +30,13 @@ pydantic==2.5.0
 # AI and ML
 google-generativeai==0.3.2
 
+# NLP and Language Processing
+nltk>=3.8.1
+spacy>=3.7.0
+textblob>=0.17.1
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.21.1
+
 # System Operations
 psutil==5.9.6
 

@@ -79,6 +79,81 @@ View our comprehensive design research and improvements:
 code docs/GUI_DESIGN_RESEARCH.md
 ```
 
+## ⚡ Quick Start
+
+### 🔧 Installation
+
+1. **Clone och setup:**
+   ```bash
+   git clone [your-repo]
+   cd Jarvis
+   python3 -m venv jarvis
+   source jarvis/bin/activate
+   pip install -r requirements.txt
+   ```
+
+2. **Starta JARVIS Core:**
+   ```bash
+   # Aktivera alias (lägg till i ~/.bashrc)
+   alias jarvis='cd /path/to/Jarvis && python3 jarvis_core.py'
+   
+   # Starta direkt
+   python3 jarvis_core.py
+   ```
+
+### 💬 Användning
+
+```bash
+🤖 JARVIS Core - Terminal AI Agent
+🎯 Fokuserad på intelligens och automation
+
+💬 Du: help
+🤖 JARVIS: [visar alla kommandon och agents]
+
+💬 Du: agents
+🤖 JARVIS: [listar alla specialiserade agents]
+
+💬 Du: agent coder "skapa en Flask API"
+🤖 Senior Developer: [genererar komplett Python Flask kod]
+
+💬 Du: research "Python AI trends 2025"
+🤖 JARVIS: [startar djup forskning och analys]
+
+💬 Du: learn "Björn gillar att jobba på kvällar"
+🤖 JARVIS: [sparar i personligt minne]
+
+💬 Du: system "installera docker"
+🤖 JARVIS: [kör sudo-kommandon säkert med lösenordsprompt]
+```
+
+### 📚 Core Kommandon
+
+| Kommando | Beskrivning | Exempel |
+|----------|-------------|---------|
+| `help` | Visa alla kommandon | `help` |
+| `agents` | Lista specialiserade agents | `agents` |
+| `agent <typ> <fråga>` | Kontakta specifik agent | `agent coder "skapa en API"` |
+| `research <ämne>` | Starta forskning | `research "Linux automation"` |
+| `learn <fakta>` | Lär JARVIS något | `learn "favoritspråk är Python"` |
+| `memory <sök>` | Sök i minne | `memory "Python"` |
+| `system <kommando>` | Kör systemoperationer | `system "status"` |
+| **Naturliga frågor** | Automatisk routing | `"hur optimerar jag min kod?"` |
+
+### 🔐 Säker Sudo Integration
+
+JARVIS Core inkluderar säker sudo-användning med:
+- **Lösenordsprompt** för alla sudo-operationer
+- **Whitelist** av tillåtna kommandon
+- **Fullständig logging** av alla sudo-aktiviteter
+- **Security violation detection**
+
+```bash
+💬 Du: system "installera nginx"
+🔐 Sudo-rättigheter krävs för: apt install nginx
+Ange ditt lösenord: [secure input]
+✅ nginx installation klar!
+```
+
 ## 🚀 Snabbstart
 
 ### Systemkrav
@@ -185,3 +260,112 @@ Copy `.env.example` to `.env` and configure:
 ---
 
 *"Sometimes you gotta run before you can walk."* - Tony Stark
+
+# JARVIS Core - Terminal AI Agent 🤖⚡
+
+> **Terminal-focused AI assistant with specialized agents and advanced automation**
+
+JARVIS Core är den senaste evolutionen av JARVIS AI - en kraftfull terminal-baserad assistent fokuserad på **intelligens över interface**. Systemet inkluderar specialiserade AI-agents för utveckling, utbildning, design och systemautomation.
+
+![JARVIS Status](https://img.shields.io/badge/status-operational-brightgreen)
+![Python](https://img.shields.io/badge/python-3.13+-blue)
+![Terminal](https://img.shields.io/badge/interface-terminal-blue)
+![Agents](https://img.shields.io/badge/agents-7-purple)
+
+## 🎯 Core Philosophy: Intelligence Over Interface
+
+**Från GUI till Core Intelligence:**
+- ✅ **Terminal interface** - Ren kommandorad-interaktion
+- ✅ **7 Specialiserade Agents** - Expert AI inom olika områden  
+- ✅ **Säker sudo integration** - System automation med lösenordsprompt
+- ✅ **Research & Memory** - All intelligens bevarad och förbättrad
+- ✅ **Local automation** - Kraftfull systemintegration
+
+---
+
+## 🤖 Specialiserade Agent System
+
+### 💻 **Senior Developer Agent** (`coder`)
+- **Specialitet**: Full-stack utveckling och arkitektur
+- **Kapaciteter**: 
+  - Kod-generering i 10+ språk (Python, JavaScript, Go, Rust, etc.)
+  - DevOps automation (Docker, CI/CD pipelines)
+  - Code review och optimering
+  - Environment setup med sudo-rättigheter
+- **Exempel**: `agent coder "skapa en REST API i Python"`
+
+### 🔧 **System Analyst Agent** (`system_analyst`)
+- **Specialitet**: System optimering och infrastruktur
+- **Kapaciteter**:
+  - Automatiska backup-lösningar
+  - Säkerhetskonfiguration (firewall, SSH)
+  - Performance monitoring och tuning
+  - Service management och automation
+- **Exempel**: `agent system_analyst "optimera mitt Linux system"`
+
+### 📊 **Data Scientist Agent** (`data_scientist`)
+- **Specialitet**: Dataanalys, ML och AI
+- **Kapaciteter**:
+  - Komplett ML pipelines med scikit-learn
+  - Exploratory Data Analysis (EDA)
+  - Data visualization och reporting
+  - Feature engineering och model selection
+- **Exempel**: `agent data_scientist "analysera min CSV fil"`
+
+### 🎨 **UI/UX Designer Agent** (`designer`)
+- **Specialitet**: Grafisk design och användarupplevelse
+- **Kapaciteter**:
+  - Modern CSS frameworks och design systems
+  - Responsiv design och accessibility
+  - Färgscheman och typografi
+  - Component libraries
+- **Exempel**: `agent designer "skapa modern CSS för min hemsida"`
+
+### ✍️ **Content Creator Agent** (`content_creator`)
+- **Specialitet**: Innehållsskapande och copywriting
+- **Kapaciteter**:
+  - SEO-optimerade blog posts
+  - Social media content strategier
+  - Marketing copy och sales pages
+  - Technical writing och dokumentation
+- **Exempel**: `agent content_creator "skriv en bloggpost om AI"`
+
+### 📚 **University Tutor Agent** (`university_tutor`)
+- **Specialitet**: Akademisk vägledning och utbildning
+- **Kapaciteter**:
+  - Konceptförklaringar (matematik, fysik, datalogi)
+  - Personliga studieplaner och scheman
+  - Tentamensförberedelser
+  - Uppsats- och forskningshjälp
+- **Exempel**: `agent university_tutor "förklara vad en derivata är"`
+
+### 🎯 **Study Coach Agent** (`study_coach`)
+- **Specialitet**: Motivation och produktivitetscoaching
+- **Kapaciteter**:
+  - Anti-prokrastinering strategier
+  - Motivation boosting tekniker
+  - Stress management och mental hälsa
+  - Goal setting och habit tracking
+- **Exempel**: `agent study_coach "jag prokrastinerar och behöver hjälp"`
+
+---
+
+## 🚀 Intelligent Agent Routing
+
+JARVIS Core inkluderar **automatisk agent routing** - bara ställ din fråga naturligt så väljer systemet rätt specialist:
+
+```bash
+💬 Du: "hur bygger jag en webapp?"
+🤖 Agent routing - Bästa match: coder (confidence: 0.85)
+🤖 Senior Developer svarar: [detaljerad webapp guide]
+
+💬 Du: "jag har ingen motivation att studera" 
+🤖 Agent routing - Bästa match: study_coach (confidence: 0.78)
+🤖 Study Coach svarar: [motivation boost strategier]
+
+💬 Du: "designa en logo för mitt företag"
+🤖 Agent routing - Bästa match: designer (confidence: 0.71)
+🤖 UI/UX Designer svarar: [design process och tools]
+```
+
+---
