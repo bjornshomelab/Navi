@@ -3,23 +3,29 @@ JARVIS AI Agent - Command Router
 Handles /command endpoint for processing user commands
 """
 from fastapi import APIRouter, HTTPException, Depends
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 import time
 import uuid
 import re
 from datetime import datetime
+import sys
+import os
 
-from ..models.schemas import CommandRequest, CommandResponse, CommandType, ActionStatus
-from ..services.gemini import GeminiService
-from ..services.local_agent import LocalAgentService
-from ..services.google_apis import GoogleAPIService
-from ..services.automation import AutomationService
-from ..services.research import ResearchService
-from ..services.memory import AdvancedMemoryService
-from ..services.self_improvement import SelfImprovementService
-from ..services.session_manager import session_manager
-from ..services.wake_word import create_wake_word_detector
-from ..services.enhanced_voice import EnhancedVoiceService
+# Add parent directory to path for absolute imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from models.schemas import CommandRequest, CommandResponse, CommandType, ActionStatus
+from services.gemini import GeminiService
+from services.local_agent import LocalAgentService
+from services.google_apis import GoogleAPIService
+from services.automation import AutomationService
+from services.research import ResearchService
+from services.memory import AdvancedMemoryService
+from services.self_improvement import SelfImprovementService
+from services.session_manager import session_manager
+from services.wake_word import create_wake_word_detector
+from services.enhanced_voice import EnhancedVoiceService
+from services.enhanced_local_agent import EnhancedLocalAgentService
 
 router = APIRouter()
 
@@ -32,6 +38,14 @@ except Exception as e:
     gemini_service = None
 
 local_agent = LocalAgentService()
+
+# Enhanced local agent for advanced operations
+try:
+    enhanced_local_agent = EnhancedLocalAgentService()
+    print("✅ Enhanced Local Agent service initialized")
+except Exception as e:
+    print(f"❌ Enhanced Local Agent service failed: {e}")
+    enhanced_local_agent = None
 
 try:
     google_service = GoogleAPIService()
@@ -126,10 +140,19 @@ async def process_command(request: CommandRequest):
         status = ActionStatus.COMPLETED
         
         if command_type == "system_action":
-            # Execute local system actions
+            # Execute local system actions with enhanced agent
             for action in actions:
-                result = await local_agent.execute_action(action)
-                actions_taken.append(f"Local: {result}")
+                if enhanced_local_agent:
+                    result = await enhanced_local_agent.execute_enhanced_action(action)
+                    if result["success"]:
+                        actions_taken.append(f"Enhanced Local: {result['message']}")
+                    else:
+                        actions_taken.append(f"Enhanced Local Error: {result['message']}")
+                        status = ActionStatus.FAILED
+                else:
+                    # Fallback to basic local agent
+                    result = await local_agent.execute_action(action)
+                    actions_taken.append(f"Local: {result}")
                 
         elif command_type == "google_api":
             # Execute Google API actions
@@ -141,10 +164,24 @@ async def process_command(request: CommandRequest):
                 actions_taken.append("Google API: Service not available")
                 
         elif command_type == "file_operation":
-            # Execute file operations
+            # Execute file operations with enhanced agent
             for action in actions:
-                result = await local_agent.execute_file_operation(action)
-                actions_taken.append(f"File: {result}")
+                if enhanced_local_agent:
+                    result = await enhanced_local_agent.execute_enhanced_action(action)
+                    if result["success"]:
+                        actions_taken.append(f"Enhanced File: {result['message']}")
+                        # Add detailed info if available
+                        if "items" in result:
+                            actions_taken.append(f"Details: Found {len(result['items'])} items")
+                        elif "organized_files" in result:
+                            actions_taken.append(f"Details: Organized {result['total_moved']} files")
+                    else:
+                        actions_taken.append(f"Enhanced File Error: {result['message']}")
+                        status = ActionStatus.FAILED
+                else:
+                    # Fallback to basic file operations
+                    result = await local_agent.execute_file_operation(action)
+                    actions_taken.append(f"File: {result}")
                 
         elif command_type == "web_action":
             # Execute web automation
@@ -639,6 +676,97 @@ async def simulate_wake_word(text: str):
             "error": "Wake word simulation not available"
         }
 
+@router.post("/enhanced-local")
+async def enhanced_local_action(
+    action: str,
+    path: Optional[str] = None,
+    content: Optional[str] = None,
+    parameters: Optional[Dict[str, Any]] = None
+):
+    """
+    Execute enhanced local computer operations
+    
+    Supports:
+    - Advanced file operations (list, read, write, organize, backup)
+    - Application management 
+    - System monitoring
+    - File search and organization
+    """
+    try:
+        if not enhanced_local_agent:
+            return {
+                "success": False,
+                "message": "Enhanced Local Agent is not available",
+                "error": "Service not initialized"
+            }
+        
+        # Prepare parameters
+        kwargs = {}
+        if path:
+            kwargs['path'] = path
+        if content:
+            kwargs['content'] = content
+        if parameters:
+            kwargs.update(parameters)
+        
+        # Execute action
+        result = await enhanced_local_agent.execute_enhanced_action(action, **kwargs)
+        
+        return {
+            "success": result["success"],
+            "message": result["message"],
+            "data": result,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        return {
+            "success": False,
+            "message": f"Enhanced local action failed: {str(e)}",
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+
+@router.get("/enhanced-local/capabilities")
+async def get_enhanced_local_capabilities():
+    """Get capabilities of enhanced local agent"""
+    try:
+        if not enhanced_local_agent:
+            return {
+                "success": False,
+                "message": "Enhanced Local Agent is not available"
+            }
+        
+        capabilities = enhanced_local_agent.get_capabilities()
+        
+        return {
+            "success": True,
+            "capabilities": capabilities,
+            "examples": {
+                "file_operations": [
+                    "lista filer i /home/bjorn/Desktop",
+                    "läs filen ~/documents/notes.txt", 
+                    "organisera filer på skrivbordet",
+                    "skapa backup av mina projekt"
+                ],
+                "application_operations": [
+                    "öppna firefox",
+                    "starta vscode",
+                    "kör terminal"
+                ],
+                "system_operations": [
+                    "visa systemstatus",
+                    "systeminfo"
+                ]
+            }
+        }
+        
+    except Exception as e:
+        return {
+            "success": False,
+            "message": f"Failed to get capabilities: {str(e)}"
+        }
+
 def _clean_text_for_tts(text: str) -> str:
     """Clean text for TTS by removing markdown, code blocks, and excessive formatting"""
     if not text:
@@ -672,7 +800,7 @@ async def process_wake_word_command(command: str):
     """Process command triggered by wake word"""
     try:
         # Create a command request
-        from ..models.schemas import CommandRequest
+        from models.schemas import CommandRequest
         
         request = CommandRequest(
             message=command,

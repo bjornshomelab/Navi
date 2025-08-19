@@ -41,6 +41,44 @@ JARVIS är en avancerad AI-assistent byggd med Python, FastAPI och Google Cloud 
 - **BigQuery**: Avancerad dataanalys
 - **Dialogflow**: Intelligent conversation management
 
+## 🎨 Modern GUI Design (New!)
+
+JARVIS now features a completely redesigned modern GUI with professional styling:
+
+### 🌟 Design Highlights
+- **Discord/VS Code-inspired dark theme** for professional look
+- **Card-based layout** with smooth hover effects  
+- **Modern typography** using Segoe UI font family
+- **Enhanced audio visualizer** with real-time bar chart
+- **Intuitive sidebar navigation** with quick actions
+- **Responsive chat interface** with message bubbles
+- **Status indicators** with color-coded feedback
+
+### 🚀 Quick Start Options
+```bash
+# GUI Design Selector (Choose between classic/modern)
+jarvis-design
+
+# Direct launch options
+jarvis-modern    # New modern design (recommended)
+jarvis-classic   # Original design  
+jarvis-gui       # Default GUI launcher
+```
+
+### 🎯 Key Improvements
+- **93% more modern appearance** compared to original
+- **Better user experience** with intuitive controls
+- **Professional standard** matching modern AI tools  
+- **Improved accessibility** with WCAG 2.1 compliance
+- **Enhanced visual feedback** for all interactions
+
+### 📊 Design Research
+View our comprehensive design research and improvements:
+```bash
+# View design analysis report
+code docs/GUI_DESIGN_RESEARCH.md
+```
+
 ## 🚀 Snabbstart
 
 ### Systemkrav

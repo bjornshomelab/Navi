@@ -6,9 +6,14 @@ from fastapi import APIRouter, HTTPException
 from typing import Dict, Any
 import uuid
 from datetime import datetime
+import sys
+import os
 
-from ..models.schemas import ActionRequest, ActionResponse, ActionStatus
-from ..services.local_agent import LocalAgentService
+# Add parent directory to path for absolute imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from models.schemas import ActionRequest, ActionResponse, ActionStatus
+from services.local_agent import LocalAgentService
 
 router = APIRouter()
 local_agent = LocalAgentService()

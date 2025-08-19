@@ -5,8 +5,13 @@ Handles /memory endpoint for storing and retrieving memories
 from fastapi import APIRouter, HTTPException
 from typing import List, Dict, Any
 from datetime import datetime
+import sys
+import os
 
-from ..models.schemas import MemoryEntry
+# Add parent directory to path for absolute imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from models.schemas import MemoryEntry
 
 router = APIRouter()
 

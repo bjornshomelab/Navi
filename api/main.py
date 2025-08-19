@@ -13,11 +13,15 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Import routes
-from .routes.command import router as command_router
-from .routes.actions import router as actions_router
-from .routes.memory import router as memory_router
-from .routes.voice import router as voice_router
+# Import routes - use absolute imports to avoid relative import issues
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from routes.command import router as command_router
+from routes.actions import router as actions_router
+from routes.memory import router as memory_router
+from routes.voice import router as voice_router
 
 # Create FastAPI app
 app = FastAPI(

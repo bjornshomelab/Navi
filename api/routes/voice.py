@@ -15,7 +15,11 @@ def get_voice_service():
     """Get voice service instance with lazy initialization"""
     global voice_service
     if voice_service is None:
-        from ..services.enhanced_voice import EnhancedVoiceService
+        import sys
+        import os
+        # Add parent directory to path for absolute imports
+        sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from services.enhanced_voice import EnhancedVoiceService
         voice_service = EnhancedVoiceService()
     return voice_service
 
