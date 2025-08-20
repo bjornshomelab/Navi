@@ -1,24 +1,200 @@
-# 🚀 JARVIS Quick Start Guide
+# 🚀 NAVI Quick Start Guide
 
-## ✅ Problem Löst!
+## ✅ Ready to Go!
 
-**Import-felet har fixats!** JARVIS startar nu korrekt med kommandot `jarvis`.
+**NAVI is your privacy-first AI assistant!** Get started with our interactive installer.
 
-### 🎯 Vad som fixades:
-- ✅ **Relative import errors** - Alla imports använder nu absoluta sökvägar
-- ✅ **Python path issues** - Ny `simple_server.py` launcher hanterar detta
-- ✅ **Audio warnings** - Suppressade för en renare upplevelse
-- ✅ **Startup reliability** - Förbättrad felhantering och debugging
+### 🎯 What makes NAVI special:
+- ✅ **100% Local Processing** - Your data stays private
+- ✅ **Multi-Provider Support** - Ollama, OpenAI, Google Gemini
+- ✅ **Smart Memory System** - RAG-powered context retention
+- ✅ **5 Specialized Agents** - Each optimized for specific tasks
+- ✅ **Zero Configuration** - Works out of the box
 
 ---
 
-## Nya Förbättrade Kommandon
+## 🚀 One-Command Installation
 
-### 🎯 Huvudkommandon
+### 🎯 Interactive Setup (Recommended)
 
 ```bash
-# NYTT! Startar server + GUI automatiskt (rekommenderas)
-jarvis
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+chmod +x setup.sh
+./setup.sh
+```
+
+**The installer guides you through:**
+1. **AI Provider Selection** (Local/Cloud/Hybrid)
+2. **RAG Database Setup** (Enhanced memory)
+3. **Feature Configuration** (Voice, images, etc.)
+4. **Shell Integration** (Convenient aliases)
+
+---
+
+## 🎮 Using NAVI
+
+### 🎯 Main Commands
+
+```bash
+# Start NAVI (if you chose shell aliases)
+navi
+
+# Command-line interface
+navi-cli
+
+# Check system status
+navi-status
+
+# Get help
+navi-help
+```
+
+### 🤖 Agent-Specific Tasks
+
+```bash
+# Programming help
+navi -a coder "Write a Python function to sort a list"
+
+# Research assistance  
+navi -a researcher "Latest AI developments"
+
+# Creative writing
+navi -a creative "Write a short story"
+
+# General chat
+navi -a chat "Hello, how are you?"
+
+# Image tasks (with compatible providers)
+navi -a image "Generate a sunset"
+```
+
+### 💬 Interactive Mode
+
+```bash
+# Start interactive session
+navi
+
+# Then chat naturally:
+> Hello NAVI!
+> Can you help me with Python?
+> What's the weather like?
+> Write me a poem about AI
+```
+
+---
+
+## 🔧 Configuration
+
+### 🎯 Quick Config
+
+```bash
+# Edit main settings
+nano config/settings.yaml
+
+# Configure API keys
+nano .env
+
+# Check what's working
+navi --status
+```
+
+### 🤖 AI Provider Setup
+
+#### Local AI (Privacy-First)
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Download models
+ollama pull llama3.2
+ollama pull codellama
+```
+
+#### Cloud AI
+```bash
+# Add to .env file
+echo "OPENAI_API_KEY=your-key-here" >> .env
+echo "GOOGLE_API_KEY=your-key-here" >> .env
+```
+
+---
+
+## 🎯 Common Use Cases
+
+### For Developers
+```bash
+navi -a coder "Explain async/await in Python"
+navi -a coder "Review this code: [paste code]"
+navi -a coder "Debug this error: [error message]"
+```
+
+### For Researchers  
+```bash
+navi -a researcher "Summarize this paper: [URL/text]"
+navi -a researcher "Find trends in AI safety"
+navi -a researcher "Compare these two approaches"
+```
+
+### For Daily Use
+```bash
+navi "Plan my day"
+navi "Explain quantum computing simply"
+navi "Help me write an email"
+```
+
+---
+
+## 🆘 Troubleshooting
+
+### Installation Issues
+```bash
+# Check Python version (needs 3.8+)
+python3 --version
+
+# Make script executable
+chmod +x setup.sh
+
+# Run with bash directly
+bash setup.sh
+```
+
+### NAVI Won't Start
+```bash
+# Check status
+navi --status
+
+# Try manual start
+python3 navi.py
+
+# Check configuration
+cat config/settings.yaml
+```
+
+### No AI Provider
+```bash
+# Install Ollama for local AI
+curl -fsSL https://ollama.ai/install.sh | sh
+ollama pull llama3.2
+
+# Or add API key for cloud AI
+echo "OPENAI_API_KEY=your-key" >> .env
+```
+
+---
+
+## 🎉 Next Steps
+
+1. **Try different agents** - Each specializes in different tasks
+2. **Explore the RAG system** - It learns from your conversations  
+3. **Customize settings** - Edit `config/settings.yaml`
+4. **Join the community** - Check GitHub for updates and discussion
+
+---
+
+**Welcome to NAVI! 🤖✨**
+
+*Your privacy-first AI assistant is ready to help!*
 
 # Välj mellan olika GUI-designs
 jarvis-design

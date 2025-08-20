@@ -32,34 +32,49 @@ NAVI is a **revolutionary AI assistant** that puts **privacy first** while deliv
 
 ## 🚀 Quick Start
 
-### Option 1: Local AI (Recommended for Privacy)
+### 🎯 One-Command Installation (Recommended)
 ```bash
-# 1. Install Ollama
-curl -fsSL https://ollama.ai/install.sh | sh
-
-# 2. Download a model
-ollama pull llama3.2
-
-# 3. Clone and run NAVI
+# Interactive setup with guided configuration
 git clone https://github.com/bjornshomelab/Navi.git
 cd Navi
-pip install -r requirements.txt
-python3 navi.py
+chmod +x setup.sh
+./setup.sh
 ```
 
-### Option 2: Cloud AI (OpenAI)
+The interactive installer will ask about:
+- 🤖 **AI Provider**: Local (Ollama), Cloud (OpenAI/Google), or Hybrid
+- 🧠 **RAG Database**: Enhanced memory and context system  
+- 🔑 **API Keys**: Optional cloud AI configuration
+- ⚡ **Features**: Voice synthesis, image processing, shell aliases
+- 🛠️ **Environment**: Virtual environment and dependencies
+
+### Option 1: Local AI (Privacy-First)
 ```bash
-# 1. Clone repository
+# For complete privacy and offline capability
 git clone https://github.com/bjornshomelab/Navi.git
 cd Navi
+./setup.sh
+# Choose: Local AI → Yes to RAG → Install features → Create aliases
+```
 
-# 2. Install dependencies
+### Option 2: Cloud AI (Maximum Performance)
+```bash
+# For access to the most powerful models
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+./setup.sh
+# Choose: Cloud AI → Enter API keys → Configure features
+```
+
+### Option 3: Manual Installation
+```bash
+# If you prefer full control
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+python3 -m venv navi_env
+source navi_env/bin/activate
 pip install -r requirements.txt
-
-# 3. Set API key
-export OPENAI_API_KEY="your-api-key-here"
-
-# 4. Run NAVI
+cp config/settings.yaml.example config/settings.yaml
 python3 navi.py
 ```
 
@@ -131,19 +146,72 @@ python3 navi.py -a image "Generate a sunset over mountains"
 
 ## 🛠 Installation
 
+### 🎯 Smart Interactive Setup (Recommended)
+
+NAVI features an intelligent installation system that adapts to your preferences:
+
+```bash
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+chmod +x setup.sh
+./setup.sh
+```
+
+**The installer will guide you through:**
+
+1. **🤖 AI Provider Selection**
+   - Local AI (Ollama) for privacy
+   - Cloud AI (OpenAI/Google) for power  
+   - Hybrid approach for flexibility
+
+2. **🧠 Memory System Configuration**
+   - RAG database for enhanced context
+   - Semantic search capabilities
+   - Knowledge persistence across sessions
+
+3. **🔑 API Key Management**
+   - Secure credential configuration
+   - Optional cloud provider setup
+   - Best practices guidance
+
+4. **⚡ Feature Selection**
+   - Voice synthesis and recognition
+   - Image processing capabilities
+   - Advanced integrations
+
+5. **🛠️ Environment Setup**
+   - Virtual environment creation
+   - Shell alias configuration
+   - Dependency optimization
+
 ### System Requirements
 - **OS**: Linux (Ubuntu/Debian recommended), macOS, Windows WSL
 - **Python**: 3.8+ (3.11+ recommended)
 - **Memory**: 4GB+ RAM recommended
-- **Storage**: 2GB+ free space
+- **Storage**: 2GB+ free space (more for local AI models)
 
-### Automated Installation (Linux)
-```bash
-git clone https://github.com/bjornshomelab/Navi.git
-cd Navi
-chmod +x install.sh
-./install.sh
-```
+### Installation Types
+
+#### 🏠 Privacy-First (Local AI)
+Perfect for users who prioritize data privacy and offline capability:
+- ✅ No data leaves your machine
+- ✅ Works completely offline
+- ✅ No API keys required
+- ⚡ Requires downloading AI models (2-4GB)
+
+#### ☁️ Performance-First (Cloud AI)  
+Ideal for users who want maximum AI capabilities:
+- ✅ Access to latest AI models
+- ✅ Faster response times
+- ✅ Advanced multimodal capabilities
+- 🔑 Requires API keys
+
+#### 🔄 Hybrid Approach
+Best of both worlds for flexible usage:
+- ✅ Local AI for privacy-sensitive tasks
+- ✅ Cloud AI for demanding workloads
+- ✅ Automatic fallback between providers
+- 🎯 Optimal for most users
 
 ### Manual Installation
 ```bash
