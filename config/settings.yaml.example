@@ -1,0 +1,113 @@
+# NAVI Configuration Example
+# Copy this file to settings.yaml and customize as needed
+
+# Provider Configuration
+providers:
+  # Preferred provider (ollama, openai, google)
+  preferred: "ollama"
+  
+  # Fallback providers if preferred is unavailable
+  fallback: ["openai", "google"]
+  
+  # Provider-specific settings
+  ollama:
+    base_url: "http://localhost:11434"
+    models:
+      default: "llama3.2"
+      code: "codellama"
+      vision: "llava"
+  
+  openai:
+    api_key: "${OPENAI_API_KEY}"  # Set via environment variable
+    model: "gpt-4"
+    max_tokens: 2000
+  
+  google:
+    api_key: "${GOOGLE_API_KEY}"  # Set via environment variable
+    model: "gemini-pro"
+
+# Agent Configuration
+agents:
+  # Default agent to use
+  default: "chat"
+  
+  # Agent-specific settings
+  chat:
+    model_preference: ["ollama", "openai", "google"]
+    temperature: 0.7
+    max_tokens: 1500
+  
+  coder:
+    model_preference: ["codellama", "gpt-4", "gemini-pro"]
+    temperature: 0.3
+    max_tokens: 2000
+  
+  researcher:
+    model_preference: ["gpt-4", "gemini-pro", "llama3.2"]
+    temperature: 0.5
+    max_tokens: 2500
+  
+  creative:
+    model_preference: ["gpt-4", "llama3.2", "gemini-pro"]
+    temperature: 0.9
+    max_tokens: 2000
+  
+  image:
+    model_preference: ["dall-e-3", "stable-diffusion"]
+    size: "1024x1024"
+
+# Memory System
+memory:
+  enabled: true
+  max_entries: 1000
+  
+  # RAG (Retrieval Augmented Generation) settings
+  rag:
+    enabled: true
+    chunk_size: 512
+    overlap: 50
+    similarity_threshold: 0.7
+  
+  # Embeddings
+  embeddings:
+    provider: "sentence-transformers"
+    model: "all-MiniLM-L6-v2"
+
+# Interface Settings
+interface:
+  # CLI settings
+  streaming: true
+  color: true
+  animations: true
+  
+  # Logging
+  log_level: "INFO"
+  log_file: "logs/navi.log"
+  
+  # Session management
+  session_timeout: 300  # seconds (5 minutes)
+
+# Privacy & Security
+privacy:
+  # Local storage only (no cloud storage)
+  local_only: true
+  
+  # Anonymize logs
+  anonymize_logs: true
+  
+  # Data retention (days)
+  data_retention: 30
+
+# Performance
+performance:
+  # Async settings
+  max_concurrent_requests: 5
+  request_timeout: 30
+  
+  # Caching
+  cache_responses: true
+  cache_ttl: 3600  # seconds (1 hour)
+  
+  # Memory optimization
+  lazy_loading: true
+  max_memory_usage: "1GB"

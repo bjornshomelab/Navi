@@ -1,53 +1,70 @@
-# Core Dependencies
-certifi==2025.8.3
-charset-normalizer==3.4.3
-idna==3.10
-requests==2.32.5
-urllib3==2.5.0
+# ============================================================================
+# NAVI - Your Local-First AI Assistant
+# Core dependencies for privacy-focused AI assistance
+# ============================================================================
 
-# AI Provider Support (optional - install as needed)
-# openai>=1.0.0  # Uncomment for OpenAI support
-# google-generativeai>=0.3.2  # Uncomment for Google Gemini support
-# anthropic>=0.7.0  # Uncomment for Claude support
+# Core Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0
 
-# FastAPI and Web Server
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
+# AI Providers (Core)
+aiohttp>=3.9.0              # For Ollama API communication
+sentence-transformers>=2.2.0  # For local embeddings
+transformers>=4.30.0        # For local models (optional)
 
-# Local AI and Ollama Support
-aiohttp==3.9.0  # For Ollama API calls
-transformers>=4.30.0  # For local models
-torch>=2.0.0  # For local AI models
-sentence-transformers>=2.2.0  # For embeddings
+# AI Providers (Optional - install as needed)
+# openai>=1.0.0             # For OpenAI GPT models
+# google-generativeai>=0.3.0  # For Google Gemini
+# anthropic>=0.7.0          # For Claude (future support)
 
-# NLP and Language Processing
-nltk>=3.8.1
-spacy>=3.7.0
-textblob>=0.17.1
-fuzzywuzzy>=0.18.0
-python-Levenshtein>=0.21.1
+# Memory & Storage
+PyYAML>=6.0
+sqlite3                     # Built into Python
 
-# System Operations
-psutil==5.9.6
+# CLI & Interface
+click>=8.1.0
+rich>=13.7.0
+colorama>=0.4.6
 
-# CLI and Terminal
-click==8.1.7
-rich==13.7.0
+# HTTP & Networking
+requests>=2.31.0
+certifi>=2023.7.22
+urllib3>=2.0.0
 
-# Desktop & Web Automation
-pyautogui==0.9.54
-selenium==4.16.0
-webdriver-manager==4.0.1
+# System Integration
+psutil>=5.9.0               # System monitoring
 
-# Document Processing
-PyPDF2==3.0.1
-Pillow>=10.2.0
-opencv-python>=4.9.0.80
-pynput==1.7.6
+# Optional: Advanced Features
+# Desktop Automation (optional)
+# pyautogui>=0.9.54
+# selenium>=4.15.0
+# webdriver-manager>=4.0.0
 
-# Development
-python-dotenv==1.0.0
+# Document Processing (optional)
+# PyPDF2>=3.0.0
+# Pillow>=10.0.0
+# opencv-python>=4.8.0
+
+# Voice & Audio (optional)
+# edge-tts>=6.1.0
+# SpeechRecognition>=3.10.0
+# pygame>=2.5.0
+
+# NLP Enhancement (optional)
+# nltk>=3.8.1
+# spacy>=3.7.0
+# textblob>=0.17.1
+# fuzzywuzzy>=0.18.0
+# python-Levenshtein>=0.21.1
+
+# Development Dependencies (dev only)
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.5.0
 
 # GUI and Audio
 matplotlib>=3.7.0
