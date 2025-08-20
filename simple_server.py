@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-JARVIS API Server - Simple Launcher
+NAVI API Server - Simple Launcher
 Fixes import issues and starts the server
 """
 
@@ -22,8 +22,8 @@ warnings.filterwarnings('ignore')
 os.environ['PYTHONWARNINGS'] = 'ignore'
 
 def main():
-    """Start JARVIS API server"""
-    print("🤖 Starting JARVIS API Server...")
+    """Start NAVI API server"""
+    print("🤖 Starting NAVI API Server...")
     
     # Change to API directory 
     os.chdir(api_dir)

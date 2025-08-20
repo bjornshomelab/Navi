@@ -1,8 +1,8 @@
-🛰 Projekt: JARVIS – Din Personliga AI-Agent
+🛰 Projekt: NAVI – Din Personliga AI-Agent
 🎯 Vision
 
 Bygga en AI-agent som bor i ditt system och lever i molnet, men kan nås via dator, iPhone och röst.
-Jarvis ska kunna förstå dig, utföra handlingar, växa över tid och alltid minnas din kontext.
+NAVI ska kunna förstå dig, utföra handlingar, växa över tid och alltid minnas din kontext.
 
 ⚙️ Arkitektur
             [ Du / Siri / Terminal ]
@@ -16,7 +16,7 @@ Jarvis ska kunna förstå dig, utföra handlingar, växa över tid och alltid mi
                        │ REST/WebSocket
                        ▼
                 ┌─────────────┐
-                │  Jarvis API │   (hostad i Cloud Run)
+                │  NAVI API │   (hostad i Cloud Run)
                 └──────┬──────┘
                        │
          ┌─────────────┼───────────────────────────────┐
@@ -30,7 +30,7 @@ Jarvis ska kunna förstå dig, utföra handlingar, växa över tid och alltid mi
  - Vision
 
 🔑 Huvudmoduler
-1. Jarvis API (Cloud Run)
+1. NAVI API (Cloud Run)
 
 Backend i Python (FastAPI)
 
@@ -62,7 +62,7 @@ Loggar allt i BigQuery för analys.
 
 En liten agent-client i Python som:
 
-Tar kommandon från Jarvis API.
+Tar kommandon från NAVI API.
 
 Kan: klicka (pyautogui/ydotool), skriva, öppna appar, läsa filer.
 
@@ -70,7 +70,7 @@ Returnerar resultat tillbaka till molnet.
 
 4. iPhone-integration
 
-Snabbaste vägen: Siri Shortcut → skickar text/röst till Jarvis API.
+Snabbaste vägen: Siri Shortcut → skickar text/röst till NAVI API.
 
 Nästa steg: liten Web-App (PWA) med chatt + röst.
 
@@ -80,14 +80,15 @@ Slutmål: dedikerad iOS-app (Flutter/Swift).
 
 Terminal CLI:
 
-jarvis "öppna senaste mejlet från Anna"
+navi "öppna senaste mejlet från Anna"
+
 
 
 Voice (på datorn):
 
-Hotword “Hey Jarvis”
+Hotword “Hey Navi”
 
-Mikrofon → STT → Jarvis API → TTS tillbaka.
+Mikrofon → STT → NAVI API → TTS tillbaka.
 
 iPhone:
 
@@ -133,3 +134,5 @@ En enhetlig assistent: samma minne och hjärna
 Tillgänglig via CLI, voice, iPhone-app
 
 Kan resonera, minnas, agera både i molnet och lokalt
+
+NAVI är nästa generations AI-assistent, byggd för lokal integritet och kraftfull AI.

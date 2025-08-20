@@ -1,371 +1,424 @@
-# JARVIS AI Agent 🤖
+<div align="center">
 
-> **Iron Man style personal AI assistant with advanced Swedish voice capabilities**
+![NAVI Logo](assets/navi1.png)
 
-JARVIS är en avancerad AI-assistent byggd med Python, FastAPI och Google Cloud APIs. Den kombinerar kraftfull forskning, dataanalys, röstinteraktion och automation för att skapa en verkligt intelligent personlig assistent.
+# 🤖 NAVI - Your Local-First AI Assistant
 
-![JARVIS Status](https://img.shields.io/badge/status-operational-brightgreen)
-![Python](https://img.shields.io/badge/python-3.13+-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+**Privacy-focused • Multi-provider • Agent-based • Open Source**
 
-## ✨ Funktioner
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Status: Active](https://img.shields.io/badge/status-active-brightgreen.svg)]()
 
-### 🎤 Avancerad Röstinteraktion
-- **Wake Word Detection**: "Hej JARVIS", "God morgon JARVIS"
-- **Naturlig svensk röst**: Microsoft Edge TTS med neural voices
-- **Röstkommandon**: Fullständig röststyrning på svenska
-- **Fallback-system**: Automatisk återgång vid audio-problem
+[Quick Start](#-quick-start) • [Features](#-features) • [Installation](#-installation) • [Documentation](#-documentation) • [Contributing](#-contributing)
 
-### 🔬 Intelligent Forskning & Analys
-- **Multi-source forskning**: Webb, akademiska källor, nyheter, myndighetdata
-- **AI-driven analys**: Google Cloud Natural Language API
-- **Insight-generering**: Automatiska rekommendationer och trender
-- **BigQuery integration**: Massiv dataanalys och lagring
-
-### 🧠 Självförbättrande AI
-- **Avancerat minne**: Personliga preferenser och interaktionshistorik
-- **Kodanalys**: Automatisk förbättring av egen kod
-- **Felhantering**: Robust error recovery och logging
-- **Session management**: Intelligent timeout och context-hantering
-
-### 🖥️ Modern GUI
-- **Tkinter interface**: Sidebar med röstvisualisering
-- **Real-time status**: Live-uppdateringar av system och röst
-- **Wake word kontroller**: Start/stopp av röstlyssning
-- **Audio visualisering**: Visuell feedback för ljudinput
-
-### ⚡ Google Cloud Integration
-- **Speech-to-Text**: Avancerad svensk röstigenkänning
-- **Vision API**: Bildanalys och OCR
-- **Cloud Storage**: Säker datalagring
-- **BigQuery**: Avancerad dataanalys
-- **Dialogflow**: Intelligent conversation management
-
-## 🎨 Modern GUI Design (New!)
-
-JARVIS now features a completely redesigned modern GUI with professional styling:
-
-### 🌟 Design Highlights
-- **Discord/VS Code-inspired dark theme** for professional look
-- **Card-based layout** with smooth hover effects  
-- **Modern typography** using Segoe UI font family
-- **Enhanced audio visualizer** with real-time bar chart
-- **Intuitive sidebar navigation** with quick actions
-- **Responsive chat interface** with message bubbles
-- **Status indicators** with color-coded feedback
-
-### 🚀 Quick Start Options
-```bash
-# GUI Design Selector (Choose between classic/modern)
-jarvis-design
-
-# Direct launch options
-jarvis-modern    # New modern design (recommended)
-jarvis-classic   # Original design  
-jarvis-gui       # Default GUI launcher
-```
-
-### 🎯 Key Improvements
-- **93% more modern appearance** compared to original
-- **Better user experience** with intuitive controls
-- **Professional standard** matching modern AI tools  
-- **Improved accessibility** with WCAG 2.1 compliance
-- **Enhanced visual feedback** for all interactions
-
-### 📊 Design Research
-View our comprehensive design research and improvements:
-```bash
-# View design analysis report
-code docs/GUI_DESIGN_RESEARCH.md
-```
-
-## ⚡ Quick Start
-
-### 🔧 Installation
-
-1. **Clone och setup:**
-   ```bash
-   git clone [your-repo]
-   cd Jarvis
-   python3 -m venv jarvis
-   source jarvis/bin/activate
-   pip install -r requirements.txt
-   ```
-
-2. **Starta JARVIS Core:**
-   ```bash
-   # Aktivera alias (lägg till i ~/.bashrc)
-   alias jarvis='cd /path/to/Jarvis && python3 jarvis_core.py'
-   
-   # Starta direkt
-   python3 jarvis_core.py
-   ```
-
-### 💬 Användning
-
-```bash
-🤖 JARVIS Core - Terminal AI Agent
-🎯 Fokuserad på intelligens och automation
-
-💬 Du: help
-🤖 JARVIS: [visar alla kommandon och agents]
-
-💬 Du: agents
-🤖 JARVIS: [listar alla specialiserade agents]
-
-💬 Du: agent coder "skapa en Flask API"
-🤖 Senior Developer: [genererar komplett Python Flask kod]
-
-💬 Du: research "Python AI trends 2025"
-🤖 JARVIS: [startar djup forskning och analys]
-
-💬 Du: learn "Björn gillar att jobba på kvällar"
-🤖 JARVIS: [sparar i personligt minne]
-
-💬 Du: system "installera docker"
-🤖 JARVIS: [kör sudo-kommandon säkert med lösenordsprompt]
-```
-
-### 📚 Core Kommandon
-
-| Kommando | Beskrivning | Exempel |
-|----------|-------------|---------|
-| `help` | Visa alla kommandon | `help` |
-| `agents` | Lista specialiserade agents | `agents` |
-| `agent <typ> <fråga>` | Kontakta specifik agent | `agent coder "skapa en API"` |
-| `research <ämne>` | Starta forskning | `research "Linux automation"` |
-| `learn <fakta>` | Lär JARVIS något | `learn "favoritspråk är Python"` |
-| `memory <sök>` | Sök i minne | `memory "Python"` |
-| `system <kommando>` | Kör systemoperationer | `system "status"` |
-| **Naturliga frågor** | Automatisk routing | `"hur optimerar jag min kod?"` |
-
-### 🔐 Säker Sudo Integration
-
-JARVIS Core inkluderar säker sudo-användning med:
-- **Lösenordsprompt** för alla sudo-operationer
-- **Whitelist** av tillåtna kommandon
-- **Fullständig logging** av alla sudo-aktiviteter
-- **Security violation detection**
-
-```bash
-💬 Du: system "installera nginx"
-🔐 Sudo-rättigheter krävs för: apt install nginx
-Ange ditt lösenord: [secure input]
-✅ nginx installation klar!
-```
-
-## 🚀 Snabbstart
-
-### Systemkrav
-- **OS**: Linux (Ubuntu/Debian rekommenderas)
-- **Python**: 3.13+ 
-- **Audio**: ALSA/PulseAudio för röstfunktioner
-- **Memory**: 4GB+ RAM rekommenderas
-- **Storage**: 2GB+ ledigt utrymme
-
-### Installation
-
-1. **Klona repository**:
-```bash
-git clone https://github.com/bjornshomelab/jarvis.git
-cd jarvis
-   ```
-
-2. **Configure API Keys:**
-   - Edit `.env` and add your `GEMINI_API_KEY`
-   - Ensure `credentials.json` is in the project root
-
-3. **Start JARVIS API:**
-   ```bash
-   python -m api.main
-   ```
-
-4. **Use CLI Client:**
-   ```bash
-   # Check status
-   python cli/jarvis_cli.py --status
-   
-   # Interactive mode
-   python cli/jarvis_cli.py --interactive
-   
-   # Single command
-   python cli/jarvis_cli.py "what time is it?"
-   ```
-
-## Architecture
-
-- **FastAPI Backend** - Cloud-ready API service
-- **Gemini AI** - For natural language understanding and reasoning
-- **Local Agent** - Executes system actions on your computer
-- **Google APIs** - Calendar, Gmail, Drive integration
-- **CLI Client** - Command-line interface
-
-## Example Commands
-
-- `"list my calendar events"`
-- `"show recent emails"`
-- `"install discord"`
-- `"open firefox"`
-- `"what's my system status?"`
-
-## Features (MVP)
-
-✅ **Completed:**
-- FastAPI service architecture
-- Gemini AI integration
-- Local system actions (install, open apps)
-- Google APIs (Calendar, Gmail, Drive)
-- CLI client with interactive mode
-- Memory system (basic)
-
-🚧 **Coming Soon:**
-- Speech-to-Text / Text-to-Speech
-- Web automation
-- Advanced memory with vector search
-- iPhone integration
-- Cloud deployment
-
-## Development
-
-The project follows this structure:
-```
-/api/           # FastAPI service
-  /routes/      # API endpoints
-  /services/    # Business logic
-  /models/      # Data schemas
-/cli/           # Command-line client
-/agent/         # Local system agent
-```
-
-## Environment Variables
-
-Copy `.env.example` to `.env` and configure:
-- `GEMINI_API_KEY` - Your Google Gemini API key
-- Other settings as needed
-
-## Google API Setup
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Enable: Gemini API, Calendar API, Gmail API, Drive API
-3. Create credentials and download `credentials.json`
-4. Place `credentials.json` in project root
-
-## Security Notes
-
-- The system can execute commands on your computer
-- Review all actions before deployment to production
-- Use appropriate authentication for API access
-- Be cautious with system-level permissions
+</div>
 
 ---
 
-*"Sometimes you gotta run before you can walk."* - Tony Stark
+## 🌟 What is NAVI?
 
-# JARVIS Core - Terminal AI Agent 🤖⚡
+NAVI is a **revolutionary AI assistant** that puts **privacy first** while delivering powerful AI capabilities. Unlike cloud-dependent assistants, NAVI runs entirely on your local machine with optional cloud fallback, ensuring your data stays private and secure.
 
-> **Terminal-focused AI assistant with specialized agents and advanced automation**
+### ✨ Why Choose NAVI?
 
-JARVIS Core är den senaste evolutionen av JARVIS AI - en kraftfull terminal-baserad assistent fokuserad på **intelligens över interface**. Systemet inkluderar specialiserade AI-agents för utveckling, utbildning, design och systemautomation.
+- 🏠 **100% Local Processing** - Your data never leaves your machine
+- 🔄 **Multi-Provider Support** - OpenAI, Google Gemini, Ollama, and local models
+- 🤖 **5 Specialized AI Agents** - Each optimized for specific tasks
+- 🧠 **Smart Memory System** - RAG-powered knowledge base with semantic search
+- ⚡ **Lightning Fast CLI** - Modern terminal-first experience
+- 🔒 **Privacy by Design** - No telemetry, no data collection, completely open source
+- 🎯 **Zero Configuration** - Works out of the box with local models
 
-![JARVIS Status](https://img.shields.io/badge/status-operational-brightgreen)
-![Python](https://img.shields.io/badge/python-3.13+-blue)
-![Terminal](https://img.shields.io/badge/interface-terminal-blue)
-![Agents](https://img.shields.io/badge/agents-7-purple)
+## 🚀 Quick Start
 
-## 🎯 Core Philosophy: Intelligence Over Interface
-
-**Från GUI till Core Intelligence:**
-- ✅ **Terminal interface** - Ren kommandorad-interaktion
-- ✅ **7 Specialiserade Agents** - Expert AI inom olika områden  
-- ✅ **Säker sudo integration** - System automation med lösenordsprompt
-- ✅ **Research & Memory** - All intelligens bevarad och förbättrad
-- ✅ **Local automation** - Kraftfull systemintegration
-
----
-
-## 🤖 Specialiserade Agent System
-
-### 💻 **Senior Developer Agent** (`coder`)
-- **Specialitet**: Full-stack utveckling och arkitektur
-- **Kapaciteter**: 
-  - Kod-generering i 10+ språk (Python, JavaScript, Go, Rust, etc.)
-  - DevOps automation (Docker, CI/CD pipelines)
-  - Code review och optimering
-  - Environment setup med sudo-rättigheter
-- **Exempel**: `agent coder "skapa en REST API i Python"`
-
-### 🔧 **System Analyst Agent** (`system_analyst`)
-- **Specialitet**: System optimering och infrastruktur
-- **Kapaciteter**:
-  - Automatiska backup-lösningar
-  - Säkerhetskonfiguration (firewall, SSH)
-  - Performance monitoring och tuning
-  - Service management och automation
-- **Exempel**: `agent system_analyst "optimera mitt Linux system"`
-
-### 📊 **Data Scientist Agent** (`data_scientist`)
-- **Specialitet**: Dataanalys, ML och AI
-- **Kapaciteter**:
-  - Komplett ML pipelines med scikit-learn
-  - Exploratory Data Analysis (EDA)
-  - Data visualization och reporting
-  - Feature engineering och model selection
-- **Exempel**: `agent data_scientist "analysera min CSV fil"`
-
-### 🎨 **UI/UX Designer Agent** (`designer`)
-- **Specialitet**: Grafisk design och användarupplevelse
-- **Kapaciteter**:
-  - Modern CSS frameworks och design systems
-  - Responsiv design och accessibility
-  - Färgscheman och typografi
-  - Component libraries
-- **Exempel**: `agent designer "skapa modern CSS för min hemsida"`
-
-### ✍️ **Content Creator Agent** (`content_creator`)
-- **Specialitet**: Innehållsskapande och copywriting
-- **Kapaciteter**:
-  - SEO-optimerade blog posts
-  - Social media content strategier
-  - Marketing copy och sales pages
-  - Technical writing och dokumentation
-- **Exempel**: `agent content_creator "skriv en bloggpost om AI"`
-
-### 📚 **University Tutor Agent** (`university_tutor`)
-- **Specialitet**: Akademisk vägledning och utbildning
-- **Kapaciteter**:
-  - Konceptförklaringar (matematik, fysik, datalogi)
-  - Personliga studieplaner och scheman
-  - Tentamensförberedelser
-  - Uppsats- och forskningshjälp
-- **Exempel**: `agent university_tutor "förklara vad en derivata är"`
-
-### 🎯 **Study Coach Agent** (`study_coach`)
-- **Specialitet**: Motivation och produktivitetscoaching
-- **Kapaciteter**:
-  - Anti-prokrastinering strategier
-  - Motivation boosting tekniker
-  - Stress management och mental hälsa
-  - Goal setting och habit tracking
-- **Exempel**: `agent study_coach "jag prokrastinerar och behöver hjälp"`
-
----
-
-## 🚀 Intelligent Agent Routing
-
-JARVIS Core inkluderar **automatisk agent routing** - bara ställ din fråga naturligt så väljer systemet rätt specialist:
-
+### Option 1: Local AI (Recommended for Privacy)
 ```bash
-💬 Du: "hur bygger jag en webapp?"
-🤖 Agent routing - Bästa match: coder (confidence: 0.85)
-🤖 Senior Developer svarar: [detaljerad webapp guide]
+# 1. Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
 
-💬 Du: "jag har ingen motivation att studera" 
-🤖 Agent routing - Bästa match: study_coach (confidence: 0.78)
-🤖 Study Coach svarar: [motivation boost strategier]
+# 2. Download a model
+ollama pull llama3.2
 
-💬 Du: "designa en logo för mitt företag"
-🤖 Agent routing - Bästa match: designer (confidence: 0.71)
-🤖 UI/UX Designer svarar: [design process och tools]
+# 3. Clone and run NAVI
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+pip install -r requirements.txt
+python3 navi.py
 ```
 
+### Option 2: Cloud AI (OpenAI)
+```bash
+# 1. Clone repository
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Set API key
+export OPENAI_API_KEY="your-api-key-here"
+
+# 4. Run NAVI
+python3 navi.py
+```
+
+## 🎯 Features
+
+### 🤖 5 Specialized AI Agents
+
+| Agent | Purpose | Best For |
+|-------|---------|----------|
+| 💬 **Chat** | General conversation | Questions, help, daily tasks |
+| 👨‍💻 **Coder** | Programming assistance | Code review, debugging, algorithms |
+| 🔬 **Researcher** | Research & analysis | Data analysis, fact-checking, reports |
+| ✍️ **Creative** | Content creation | Writing, brainstorming, storytelling |
+| 🎨 **Image** | Visual content | Image generation, design, analysis |
+
+### 🧠 Intelligent Memory System
+- **Semantic Search**: Find relevant information using AI embeddings
+- **Conversation Context**: Maintains context across sessions
+- **Knowledge Base**: Learns from your interactions
+- **Local Storage**: All data stored securely on your machine
+
+### 🔄 Multi-Provider Architecture
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        NAVI Core                            │
+├─────────────────────────────────────────────────────────────┤
+│  🤖 Agent System     │  🧠 Memory System   │  📡 Providers   │
+│  ┌─────────────────┐ │  ┌─────────────────┐ │ ┌─────────────┐ │
+│  │ • Chat          │ │  │ • RAG Search    │ │ │ • Ollama    │ │
+│  │ • Coder         │ │  │ • JSON Storage  │ │ │ • OpenAI    │ │
+│  │ • Researcher    │ │  │ • Embeddings    │ │ │ • Google    │ │
+│  │ • Creative      │ │  │ • Context       │ │ │ • Local     │ │
+│  │ • Image         │ │  │ • History       │ │ │ Models      │ │
+│  └─────────────────┘ │  └─────────────────┘ │ └─────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## 💡 Usage Examples
+
+### Basic Commands
+```bash
+# Interactive mode
+python3 navi.py
+
+# Single command
+python3 navi.py "Hello, NAVI!"
+
+# Agent-specific task
+python3 navi.py -a coder "Write a Python function to sort a list"
+
+# Status check
+python3 navi.py --status
+```
+
+### Agent Commands
+```bash
+# Programming help
+python3 navi.py -a coder "Explain async/await in Python"
+
+# Research assistance
+python3 navi.py -a researcher "Latest developments in AI safety"
+
+# Creative writing
+python3 navi.py -a creative "Write a short story about AI"
+
+# Image generation (with compatible providers)
+python3 navi.py -a image "Generate a sunset over mountains"
+```
+
+## 🛠 Installation
+
+### System Requirements
+- **OS**: Linux (Ubuntu/Debian recommended), macOS, Windows WSL
+- **Python**: 3.8+ (3.11+ recommended)
+- **Memory**: 4GB+ RAM recommended
+- **Storage**: 2GB+ free space
+
+### Automated Installation (Linux)
+```bash
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+chmod +x install.sh
+./install.sh
+```
+
+### Manual Installation
+```bash
+# 1. Clone repository
+git clone https://github.com/bjornshomelab/Navi.git
+cd Navi
+
+# 2. Create virtual environment
+python3 -m venv navi_env
+source navi_env/bin/activate  # Linux/macOS
+# or
+navi_env\Scripts\activate     # Windows
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Configure (optional)
+cp config/settings.yaml.example config/settings.yaml
+# Edit config/settings.yaml with your preferences
+
+# 5. Run NAVI
+python3 navi.py
+```
+
+## 🔧 Configuration
+
+### Provider Setup
+
+#### Ollama (Local AI)
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Download models
+ollama pull llama3.2          # General purpose
+ollama pull codellama         # Code-focused
+ollama pull llava             # Vision capabilities
+```
+
+#### OpenAI
+```bash
+# Set environment variable
+export OPENAI_API_KEY="sk-your-api-key-here"
+
+# Or add to .env file
+echo "OPENAI_API_KEY=sk-your-api-key-here" >> .env
+```
+
+#### Google Gemini
+```bash
+# Set environment variable
+export GOOGLE_API_KEY="your-google-api-key"
+
+# Or add to .env file
+echo "GOOGLE_API_KEY=your-google-api-key" >> .env
+```
+
+### Configuration File
+```yaml
+# config/settings.yaml
+providers:
+  preferred: "ollama"  # ollama, openai, google
+  fallback: ["openai", "google"]
+
+agents:
+  default: "chat"
+  
+memory:
+  enabled: true
+  max_entries: 1000
+  
+interface:
+  streaming: true
+  color: true
+```
+
+## 🌍 Use Cases
+
+### For Developers
+- **Code Review**: Get instant feedback on your code
+- **Debugging**: AI-powered problem solving
+- **Documentation**: Generate docs and comments
+- **Learning**: Understand complex programming concepts
+
+### For Researchers
+- **Data Analysis**: Process and interpret data
+- **Literature Review**: Summarize research papers
+- **Report Generation**: Create comprehensive reports
+- **Fact Checking**: Verify information quickly
+
+### For Content Creators
+- **Writing Assistance**: Overcome writer's block
+- **Brainstorming**: Generate creative ideas
+- **Editing**: Improve and refine content
+- **Social Media**: Create engaging posts
+
+### For Daily Use
+- **Question Answering**: Get instant answers
+- **Task Planning**: Organize your day
+- **Learning**: Explore new topics
+- **Problem Solving**: Work through challenges
+
+## 🔒 Privacy & Security
+
+### Privacy Features
+- **Local Processing**: Core functionality works offline
+- **No Telemetry**: Zero data collection or tracking
+- **Open Source**: Full transparency of code
+- **Data Control**: You own and control all your data
+
+### Security Measures
+- **Sandboxed Execution**: Runs in isolated environment
+- **Secure Storage**: Local encryption for sensitive data
+- **API Key Safety**: Secure handling of credentials
+- **Regular Updates**: Security patches and improvements
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### Quick Start
+```bash
+# 1. Fork the repository
+# 2. Clone your fork
+git clone https://github.com/yourusername/Navi.git
+cd Navi
+
+# 3. Create a feature branch
+git checkout -b feature/amazing-feature
+
+# 4. Make your changes and test
+python3 -m pytest tests/
+
+# 5. Commit and push
+git commit -m "Add amazing feature"
+git push origin feature/amazing-feature
+
+# 6. Create a Pull Request
+```
+
+### Areas for Contribution
+- 🐛 **Bug Fixes**: Help us squash bugs
+- ✨ **New Features**: Add exciting capabilities
+- 📚 **Documentation**: Improve guides and examples
+- 🧪 **Testing**: Increase test coverage
+- 🌐 **Translations**: Support more languages
+- 🎨 **UI/UX**: Enhance user experience
+
+## 📚 Documentation
+
+- 📖 [User Guide](docs/user-guide.md)
+- 🔧 [Developer Guide](docs/developer-guide.md)
+- 📋 [API Reference](docs/api-reference.md)
+- 🚀 [Advanced Usage](docs/advanced-usage.md)
+- ❓ [FAQ](docs/faq.md)
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**NAVI won't start?**
+```bash
+# Check Python version
+python3 --version  # Should be 3.8+
+
+# Check dependencies
+pip install -r requirements.txt
+
+# Check configuration
+python3 navi.py --status
+```
+
+**No AI provider available?**
+```bash
+# Install Ollama for local AI
+curl -fsSL https://ollama.ai/install.sh | sh
+ollama pull llama3.2
+
+# Or set OpenAI API key
+export OPENAI_API_KEY="your-key-here"
+```
+
+**Memory issues?**
+```bash
+# Clear memory database
+rm -rf data/memory/
+
+# Or reduce memory usage in config
+echo "memory: { max_entries: 100 }" >> config/settings.yaml
+```
+
+## 🏗 Architecture
+
+NAVI uses a modular architecture designed for extensibility and maintainability:
+
+```
+navi/
+├── core.py          # Main application logic
+├── providers.py     # AI provider abstractions
+├── agents.py        # Specialized AI agents
+├── memory.py        # Memory and context management
+└── __init__.py
+
+config/
+├── settings.yaml    # Main configuration
+├── agents.yaml      # Agent configurations
+├── providers.yaml   # Provider settings
+└── memory.yaml      # Memory settings
+
+cli/
+└── navi_cli.py      # Command-line interface
+
+data/
+└── memory/          # Local memory storage
+```
+
+## 🛣 Roadmap
+
+### v2.1 - Enhanced Intelligence
+- [ ] Advanced reasoning capabilities
+- [ ] Multi-modal input support
+- [ ] Improved context understanding
+- [ ] Custom agent creation
+
+### v2.2 - Ecosystem Integration
+- [ ] Plugin system
+- [ ] VS Code extension
+- [ ] Browser integration
+- [ ] Mobile companion app
+
+### v2.3 - Enterprise Features
+- [ ] Team collaboration
+- [ ] Access controls
+- [ ] Audit logging
+- [ ] Backup/sync options
+
+## 📊 Performance
+
+### Benchmarks
+- **Startup Time**: < 3 seconds
+- **Response Time**: < 500ms (local models)
+- **Memory Usage**: 200-800MB
+- **CPU Usage**: Low impact on system
+
+### Optimization
+- Lazy loading of AI models
+- Efficient memory management
+- Streaming responses
+- Asynchronous processing
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 💬 Community
+
+- 🐙 **GitHub**: [Issues](https://github.com/bjornshomelab/Navi/issues) • [Discussions](https://github.com/bjornshomelab/Navi/discussions)
+- 📧 **Email**: bjornshomelab@gmail.com
+- 💬 **Discord**: [Join our community](https://discord.gg/navi-ai) *(coming soon)*
+
+## 🙏 Acknowledgments
+
+- **OpenAI** for advancing AI accessibility
+- **Ollama** for making local AI simple
+- **The Open Source Community** for inspiration and support
+- **Contributors** who make NAVI better every day
+
 ---
+
+<div align="center">
+
+**"The best AI assistant is the one that respects your privacy"**
+
+*Building the future of local-first AI, one conversation at a time* 🤖✨
+
+[⭐ Star this project](https://github.com/bjornshomelab/Navi) • [🍴 Fork it](https://github.com/bjornshomelab/Navi/fork) • [📢 Share it](https://twitter.com/intent/tweet?text=Check%20out%20NAVI%20-%20Your%20Local-First%20AI%20Assistant!%20https://github.com/bjornshomelab/Navi)
+
+</div>

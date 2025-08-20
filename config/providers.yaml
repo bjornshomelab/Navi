@@ -1,0 +1,124 @@
+# NAVI Provider Configuration
+# Configure which AI providers to use and how
+
+providers:
+  # OpenAI (requires API key)
+  openai:
+    enabled: false  # Set to true and add API key to use
+    api_key: null   # Set your OpenAI API key here or use OPENAI_API_KEY env var
+    models:
+      - "gpt-4"
+      - "gpt-4-turbo"
+      - "gpt-3.5-turbo"
+      - "dall-e-3"
+      - "whisper-1"
+    priority: 3
+    settings:
+      max_tokens: 4000
+      temperature: 0.7
+
+  # Google Gemini (requires API key)  
+  google:
+    enabled: false  # Set to true and add API key to use
+    api_key: null   # Set your Google API key here or use GOOGLE_API_KEY env var
+    models:
+      - "gemini-pro"
+      - "gemini-pro-vision"
+    priority: 4
+    settings:
+      max_tokens: 4000
+      temperature: 0.7
+
+  # Ollama (local AI models)
+  ollama:
+    enabled: true   # Enabled by default - best for privacy
+    base_url: "http://localhost:11434"
+    models:
+      - "llama3.2"
+      - "codellama"
+      - "nomic-embed-text"
+      - "phi3"
+    priority: 1     # Highest priority - local first!
+    settings:
+      temperature: 0.7
+
+  # Local transformers (completely offline)
+  local:
+    enabled: true   # Enabled by default
+    models:
+      - "sentence-transformers/all-MiniLM-L6-v2"
+      - "microsoft/DialoGPT-medium"
+    priority: 2
+    settings:
+      device: "cpu"  # or "cuda" if you have GPU
+
+# Provider priority order (first available provider will be used)
+priority:
+  - "ollama"    # Local LLMs (best privacy)
+  - "local"     # Local transformers
+  - "openai"    # Cloud providers (require API keys)
+  - "google"
+
+# Default provider (use "auto" for automatic selection based on priority)
+default: "auto"
+
+# Advanced settings
+settings:
+  # Automatic model selection
+  auto_model_selection: true
+  
+  # Fallback behavior when primary provider fails
+  enable_fallback: true
+  
+  # Provider health check interval (seconds)
+  health_check_interval: 300
+  
+  # Request timeout (seconds)
+  request_timeout: 30
+  
+  # Rate limiting
+  rate_limiting:
+    enabled: false
+    requests_per_minute: 60
+
+# Model-specific overrides
+model_overrides:
+  # For coding tasks, prefer code-specific models
+  "coding":
+    preferred_models:
+      ollama: "codellama"
+      openai: "gpt-4"
+  
+  # For creative tasks, use higher temperature
+  "creative":
+    temperature: 0.8
+    preferred_models:
+      ollama: "llama3.2"
+      openai: "gpt-4"
+
+# Provider-specific configurations
+provider_configs:
+  ollama:
+    # Automatically pull models if not available
+    auto_pull_models: true
+    
+    # Models to ensure are available
+    required_models:
+      - "llama3.2"
+      - "nomic-embed-text"
+  
+  openai:
+    # Organization ID (optional)
+    organization: null
+    
+    # Use Azure OpenAI instead
+    use_azure: false
+    azure_endpoint: null
+    
+  google:
+    # Safety settings for Gemini
+    safety_settings:
+      - category: "HARM_CATEGORY_HARASSMENT"
+        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+      - category: "HARM_CATEGORY_HATE_SPEECH"
+        threshold: "BLOCK_MEDIUM_AND_ABOVE"

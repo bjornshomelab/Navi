@@ -1,4 +1,4 @@
-# JARVIS AI Agent - Changelog
+# NAVI AI Agent - Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -155,7 +155,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Cross-platform compatibility** with consistent styling
 
 #### Improved Startup Experience
-- **Unified jarvis command** that starts both server and GUI automatically
+- **Unified navi command** that starts both server and GUI automatically
 - **GUI design selector** with quick choice between classic/modern
 - **Automatic server detection** and intelligent startup handling
 - **5-second quick-start** with default modern GUI option
@@ -171,7 +171,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed 🔄
 
 #### Startup Behavior
-- **jarvis command** now starts both server and GUI (instead of just server)
+- **navi command** now starts both server and GUI (instead of just server)
 - **Default GUI** is now the modern design for better user experience
 - **Faster startup** with intelligent server detection
 - **Better error handling** during startup process

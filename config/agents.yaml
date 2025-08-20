@@ -1,0 +1,226 @@
+# NAVI Agent Configuration
+# Define and customize AI agents
+
+# Global agent settings
+global:
+  max_context_length: 4000
+  default_temperature: 0.7
+  enable_memory: true
+  save_interactions: true
+
+# Agent definitions
+agents:
+  # General chat agent
+  chat:
+    enabled: true
+    type: "chat"
+    description: "General purpose conversational AI assistant"
+    system_prompt: |
+      You are NAVI, a helpful AI assistant. You are knowledgeable, friendly, and concise.
+      Provide accurate information and helpful responses. If you're unsure about something, say so.
+      You prioritize user privacy and run locally when possible.
+    temperature: 0.7
+    max_context_length: 4000
+    capabilities:
+      - conversation
+      - general_knowledge
+      - task_assistance
+    routing_keywords:
+      - "help"
+      - "question"
+      - "what"
+      - "how"
+      - "why"
+
+  # Programming and code assistant
+  coder:
+    enabled: true
+    type: "specialist"
+    description: "Programming and software development assistant"
+    system_prompt: |
+      You are a senior software engineer and coding assistant. 
+      Provide clean, efficient, and well-documented code. Always explain your solutions.
+      Follow best practices and consider security, performance, and maintainability.
+      Support multiple programming languages and provide code examples.
+    temperature: 0.3
+    max_context_length: 6000
+    capabilities:
+      - code_generation
+      - code_review
+      - debugging
+      - architecture
+      - documentation
+    routing_keywords:
+      - "code"
+      - "programming"
+      - "function"
+      - "debug"
+      - "script"
+      - "algorithm"
+      - "software"
+      - "development"
+    preferred_providers:
+      - "ollama:codellama"
+      - "openai:gpt-4"
+
+  # Research and analysis specialist
+  researcher:
+    enabled: true
+    type: "specialist"
+    description: "Research and data analysis specialist"
+    system_prompt: |
+      You are a research specialist with expertise in data analysis and information synthesis.
+      Provide thorough, well-researched responses with citations when possible. 
+      Be analytical and objective in your assessments.
+      Structure your responses clearly with headings and bullet points.
+    temperature: 0.4
+    max_context_length: 8000
+    capabilities:
+      - research
+      - analysis
+      - summarization
+      - fact_checking
+      - data_interpretation
+    routing_keywords:
+      - "research"
+      - "analyze"
+      - "study"
+      - "investigate"
+      - "data"
+      - "report"
+      - "facts"
+    memory_settings:
+      use_rag: true
+      max_knowledge_chunks: 10
+
+  # Creative writing and content creation
+  creative:
+    enabled: true
+    type: "specialist"
+    description: "Creative writing and content creation specialist"
+    system_prompt: |
+      You are a creative writing expert with experience in various forms of content creation.
+      Be imaginative, engaging, and original in your responses. Adapt your style to the user's needs.
+      Whether it's storytelling, marketing copy, or creative brainstorming, bring creativity and flair.
+    temperature: 0.8
+    max_context_length: 5000
+    capabilities:
+      - creative_writing
+      - storytelling
+      - content_creation
+      - brainstorming
+      - editing
+      - copywriting
+    routing_keywords:
+      - "write"
+      - "story"
+      - "creative"
+      - "poem"
+      - "content"
+      - "blog"
+      - "marketing"
+      - "brainstorm"
+
+  # Image generation and visual content
+  image:
+    enabled: true
+    type: "specialist"
+    description: "Image generation and visual content specialist"
+    system_prompt: |
+      You are a visual design expert specializing in image generation and analysis.
+      Provide detailed, creative prompts for image generation and thorough analysis of visual content.
+      Understand art styles, composition, color theory, and visual design principles.
+    temperature: 0.6
+    max_context_length: 3000
+    capabilities:
+      - image_generation
+      - image_analysis
+      - visual_design
+      - prompt_engineering
+    routing_keywords:
+      - "image"
+      - "picture"
+      - "generate"
+      - "draw"
+      - "visual"
+      - "art"
+      - "design"
+    preferred_providers:
+      - "openai:dall-e-3"
+      - "openai:dall-e-2"
+
+# Agent routing settings
+routing:
+  # Default agent when no specific agent is targeted
+  default_agent: "chat"
+  
+  # Enable automatic agent selection based on message content
+  auto_routing: true
+  
+  # Confidence threshold for auto-routing (0.0 to 1.0)
+  routing_confidence_threshold: 0.7
+  
+  # Fallback to default agent if routing confidence is low
+  fallback_to_default: true
+  
+  # Allow users to override agent selection
+  allow_user_override: true
+
+# Memory settings for agents
+memory:
+  # Enable agent memory
+  enabled: true
+  
+  # Store agent-specific context
+  agent_context: true
+  
+  # Maximum context items per agent
+  max_context_per_agent: 100
+  
+  # Context cleanup interval (days)
+  context_cleanup_days: 30
+  
+  # Share knowledge between agents
+  shared_knowledge: true
+
+# Conversation settings
+conversation:
+  # Save conversation history
+  save_history: true
+  
+  # Maximum conversation history length
+  max_history_length: 1000
+  
+  # Session timeout (minutes)
+  session_timeout: 60
+  
+  # Enable conversation continuity across sessions
+  cross_session_continuity: true
+
+# Agent development settings
+development:
+  # Enable custom agents (future feature)
+  enable_custom_agents: false
+  
+  # Custom agent directory
+  custom_agent_dir: "custom_agents"
+  
+  # Agent hot-reloading for development
+  hot_reload: false
+  
+  # Debug mode for agents
+  debug_mode: false
+
+# Performance settings
+performance:
+  # Parallel agent initialization
+  parallel_init: true
+  
+  # Agent response caching
+  response_caching: true
+  
+  # Cache TTL (seconds)
+  cache_ttl: 3600
+  
+  # Maximum concurrent agent requests
+  max_concurrent_requests: 5

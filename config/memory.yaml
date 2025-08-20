@@ -1,0 +1,130 @@
+# NAVI Memory Configuration
+# Configure memory system settings
+
+memory:
+  # Enable memory system
+  enabled: true
+  
+  # Data storage directory
+  data_dir: "data/memory"
+  
+  # Conversation settings
+  conversations:
+    # Maximum messages per conversation
+    max_messages_per_conversation: 100
+    
+    # Save conversation history
+    save_history: true
+    
+    # Session timeout (minutes)
+    session_timeout: 60
+    
+    # Enable cross-session continuity
+    cross_session_continuity: true
+
+  # Knowledge base settings
+  knowledge:
+    # Enable knowledge base
+    enabled: true
+    
+    # Maximum knowledge items
+    max_knowledge_items: 1000
+    
+    # Automatic knowledge extraction
+    auto_extract: true
+    
+    # Minimum interaction length to save as knowledge
+    min_content_length: 50
+
+  # Embeddings and RAG
+  embeddings:
+    # Enable semantic search with embeddings
+    enabled: true
+    
+    # Embedding model (local)
+    model: "sentence-transformers/all-MiniLM-L6-v2"
+    
+    # Embedding dimensions
+    dimensions: 384
+    
+    # Similarity threshold for relevant results
+    similarity_threshold: 0.7
+    
+    # Maximum results to return
+    max_results: 5
+
+  # Data cleanup
+  cleanup:
+    # Enable automatic cleanup
+    enabled: true
+    
+    # Cleanup interval (days)
+    cleanup_interval_days: 30
+    
+    # Keep conversations for this many days
+    conversation_retention_days: 90
+    
+    # Keep knowledge for this many days
+    knowledge_retention_days: 365
+
+  # Performance settings
+  performance:
+    # Batch size for embedding operations
+    embedding_batch_size: 32
+    
+    # Cache embeddings in memory
+    cache_embeddings: true
+    
+    # Maximum memory cache size (MB)
+    max_cache_size_mb: 256
+    
+    # Async operation timeout (seconds)
+    operation_timeout: 30
+
+# Context settings
+context:
+  # Enable context awareness
+  enabled: true
+  
+  # Context window size
+  window_size: 10
+  
+  # Include conversation history in context
+  include_history: true
+  
+  # Include relevant knowledge in context
+  include_knowledge: true
+  
+  # Maximum context tokens
+  max_context_tokens: 2000
+
+# Export settings
+export:
+  # Enable data export
+  enabled: true
+  
+  # Export formats
+  formats:
+    - "json"
+    - "markdown"
+    - "csv"
+  
+  # Include metadata in exports
+  include_metadata: true
+  
+  # Compress exports
+  compress: true
+
+# Privacy settings
+privacy:
+  # Encrypt sensitive data
+  encrypt_data: false
+  
+  # Anonymize user data
+  anonymize: false
+  
+  # Local-only processing
+  local_only: true
+  
+  # Data sharing settings
+  share_data: false

@@ -1,13 +1,13 @@
-# JARVIS Installation Guide 🚀
+# NAVI Installation Guide 🚀
 
 ## Snabbinstallation (Rekommenderat)
 
 ### För Ubuntu/Debian-system:
 
 ```bash
-# 1. Klona JARVIS
-git clone https://github.com/bjornshomelab/jarvis.git
-cd jarvis
+# 1. Klona NAVI
+git clone https://github.com/bjornshomelab/navi.git
+cd navi
 
 # 2. Kör installationsskriptet
 chmod +x install.sh
@@ -17,10 +17,10 @@ chmod +x install.sh
 source ~/.bashrc
 
 # 4. Testa installationen
-jarvis-voice
+navi-voice
 
-# 5. Starta JARVIS
-jarvis-start
+# 5. Starta NAVI
+navi-start
 ```
 
 Det är allt! 🎉
