@@ -32,49 +32,57 @@ NAVI is a **revolutionary AI assistant** that puts **privacy first** while deliv
 
 ## 🚀 Quick Start
 
-### 🎯 One-Command Installation (Recommended)
+### � One-Command Global Installation (Recommended)
 ```bash
-# Interactive setup with guided configuration
+# Install NAVI globally - accessible from anywhere
 git clone https://github.com/bjornshomelab/Navi.git
 cd Navi
 chmod +x setup.sh
 ./setup.sh
+# Choose: Global Installation for system-wide access
+```
+
+After installation, use NAVI from anywhere:
+```bash
+navi                    # Start NAVI from any directory
+navi-cli               # Command-line interface
+navi-status            # Check system status
 ```
 
 The interactive installer will ask about:
 - 🤖 **AI Provider**: Local (Ollama), Cloud (OpenAI/Google), or Hybrid
 - 🧠 **RAG Database**: Enhanced memory and context system  
 - 🔑 **API Keys**: Optional cloud AI configuration
-- ⚡ **Features**: Voice synthesis, image processing, shell aliases
-- 🛠️ **Environment**: Virtual environment and dependencies
+- ⚡ **Features**: Voice synthesis, image processing
+- 🌍 **Access Method**: Global commands, shell aliases, or manual
 
-### Option 1: Local AI (Privacy-First)
+### Installation Options
+
+#### Option 1: Global Installation (Best Experience)
 ```bash
-# For complete privacy and offline capability
 git clone https://github.com/bjornshomelab/Navi.git
 cd Navi
 ./setup.sh
-# Choose: Local AI → Yes to RAG → Install features → Create aliases
+# Choose: Global Installation
+# Use: navi (from anywhere)
 ```
 
-### Option 2: Cloud AI (Maximum Performance)
+#### Option 2: Local with Aliases
 ```bash
-# For access to the most powerful models
 git clone https://github.com/bjornshomelab/Navi.git
 cd Navi
 ./setup.sh
-# Choose: Cloud AI → Enter API keys → Configure features
+# Choose: Shell Aliases
+# Use: navi (after source ~/.bashrc)
 ```
 
-### Option 3: Manual Installation
+#### Option 3: Manual Installation
 ```bash
-# If you prefer full control
 git clone https://github.com/bjornshomelab/Navi.git
 cd Navi
 python3 -m venv navi_env
 source navi_env/bin/activate
 pip install -r requirements.txt
-cp config/settings.yaml.example config/settings.yaml
 python3 navi.py
 ```
 
@@ -116,32 +124,29 @@ python3 navi.py
 
 ### Basic Commands
 ```bash
-# Interactive mode
-python3 navi.py
+# Global commands (if globally installed)
+navi                    # Interactive mode from anywhere
+navi-cli               # Command-line interface
+navi-status            # System status check
 
-# Single command
+# Or manual commands
+python3 navi.py        # From NAVI directory
 python3 navi.py "Hello, NAVI!"
-
-# Agent-specific task
-python3 navi.py -a coder "Write a Python function to sort a list"
-
-# Status check
-python3 navi.py --status
 ```
 
 ### Agent Commands
 ```bash
 # Programming help
-python3 navi.py -a coder "Explain async/await in Python"
+navi -a coder "Explain async/await in Python"
 
 # Research assistance
-python3 navi.py -a researcher "Latest developments in AI safety"
+navi -a researcher "Latest developments in AI safety"
 
 # Creative writing
-python3 navi.py -a creative "Write a short story about AI"
+navi -a creative "Write a short story about AI"
 
 # Image generation (with compatible providers)
-python3 navi.py -a image "Generate a sunset over mountains"
+navi -a image "Generate a sunset over mountains"
 ```
 
 ## 🛠 Installation
@@ -388,7 +393,22 @@ git push origin feature/amazing-feature
 - 🚀 [Advanced Usage](docs/advanced-usage.md)
 - ❓ [FAQ](docs/faq.md)
 
-## 🐛 Troubleshooting
+## �️ Uninstallation
+
+If you need to remove NAVI:
+
+```bash
+# From NAVI directory
+./uninstall.sh
+```
+
+The uninstaller will:
+- Remove global commands (navi, navi-cli, navi-status)
+- Clean up shell aliases
+- Optionally remove virtual environment and data
+- Restore your system to pre-installation state
+
+## �🐛 Troubleshooting
 
 ### Common Issues
 
