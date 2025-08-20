@@ -248,6 +248,24 @@ interface:
 
 ## 🔒 Privacy & Security
 
+### 🚨 Important Security Notice
+NAVI prioritizes your security and privacy. Please follow these guidelines:
+
+#### API Key Security
+- **Never commit API keys** to version control
+- **Use `.env` files** for local development (already in `.gitignore`)
+- **Use environment variables** in production
+- **Regenerate keys** if they're ever exposed
+
+```bash
+# ✅ Good - Use .env file (not tracked by git)
+cp .env.example .env
+# Edit .env with your real keys
+
+# ❌ Bad - Never do this
+git add .env  # Contains sensitive data!
+```
+
 ### Privacy Features
 - **Local Processing**: Core functionality works offline
 - **No Telemetry**: Zero data collection or tracking
@@ -259,6 +277,8 @@ interface:
 - **Secure Storage**: Local encryption for sensitive data
 - **API Key Safety**: Secure handling of credentials
 - **Regular Updates**: Security patches and improvements
+
+> 📋 **Security Reports**: Found a security issue? Please email bjornshomelab@gmail.com or create an issue with the "security" label.
 
 ## 🤝 Contributing
 
